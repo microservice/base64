@@ -8,7 +8,7 @@
     "url": "git+https://github.com/microservice/base64.git"
   },
   "author": "Jean Barriere",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/microservice/base64/issues"
   },
