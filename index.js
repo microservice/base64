@@ -11,7 +11,7 @@ http.createServer((req, res) => {
       res.writeHead(404) // the request is not valid
       res.end()
     }
-    let content// content to encode/decode
+    let content // content to encode/decode
     try {
       content = JSON.parse(body).content.toString()
     } catch (ignored) {
