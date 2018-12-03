@@ -7,13 +7,20 @@ http.createServer((req, res) => {
   let body = ''
   req.on('data', chunk => { body += chunk.toString() })
   req.on('end', () => {
-    let content
+    if (!['/encode', '/decode'].includes(req.url)) {
+      res.writeHead(404) // the request is not valid
+      res.end()
+    }
+    let content// content to encode/decode
     try {
       content = JSON.parse(body).content.toString()
-    } catch (ignored) {}
-    let route = ['/encode', '/decode'].includes(req.url)
-    let ret = route && content ? b64(content, req.url === '/decode') : JSON.stringify({ message: (content ? 'not found' : 'malformed content') })
-    res.writeHead(route ? 200 : content ? 404 : 400, { 'Content-Length': Buffer.byteLength(ret), 'Content-Type': route ? 'text/plain' : 'application/json' })
+    } catch (ignored) {
+      res.writeHead(400) // the request is malformed
+      res.end()
+    }
+    // The request is valid, we process the data
+    let ret = b64(content, (req.url === '/decode')) // b64(content:string, decode:bool):string
+    res.writeHead(200, { 'Content-Length': Buffer.byteLength(ret), 'Content-Type': 'text/plain' })
     res.end(ret)
   })
 }).listen(process.env.PUBSUB_PORT || 5000)
