@@ -5,7 +5,7 @@ lifecycle:
 info:
   version: 1.0.0
   title: Base64 utils  
-  description: This is a simple base64 microservice
+  description: This is a simple base64 encoder/decoder
   contact:
     name: Jean Barriere
     url: https://github.com/JeanBarriere
