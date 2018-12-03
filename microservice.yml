@@ -29,7 +29,7 @@ actions:
     output:
       type: string
   decode:
-    help: Decode a string from base64
+    help: Decode a string encoded in base64
     arguments:
       content:
         type: string
