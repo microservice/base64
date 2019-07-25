@@ -31,3 +31,4 @@ $ omg run decode -a content=<BASE64_CONTENT>
 
 ## License
 [MIT License](https://github.com/omg-services/base64/blob/master/LICENSE).
+
