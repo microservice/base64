@@ -1,10 +1,10 @@
-omg: 1
+oms: 1
 lifecycle:
   startup:
-    command: ["node", "index.js"]
+    command: ['node', 'index.js']
 info:
   version: 1.0.0
-  title: Base64 utils  
+  title: Base64 utils
   description: This is a simple base64 encoder/decoder
   contact:
     name: Jean Barriere
@@ -12,7 +12,7 @@ info:
     email: jean@barriere.io
   license:
     name: MIT
-    url: https://opensource.org/licenses/MIT 
+    url: https://opensource.org/licenses/MIT
 actions:
   encode:
     help: Encode a string to base64
