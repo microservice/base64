@@ -1,18 +1,20 @@
 oms: 1
-lifecycle:
-  startup:
-    command: ['node', 'index.js']
 info:
   version: 1.0.0
   title: Base64 utils
   description: This is a simple base64 encoder/decoder
   contact:
-    name: Jean Barriere
-    url: https://github.com/JeanBarriere
-    email: jean@barriere.io
+    name: Open Microservices
+    url: 'https://openmicroservices.org'
+    email: core@openmicroservices.org
   license:
     name: MIT
-    url: https://opensource.org/licenses/MIT
+    url: 'https://opensource.org/licenses/MIT'
+lifecycle:
+  startup:
+    command:
+      - node
+      - index.js
 actions:
   encode:
     help: Encode a string to base64
